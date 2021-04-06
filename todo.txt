@@ -1,0 +1,17 @@
+-Todo list
+
+- Done Install and setup django
+- Install and setup Vue
+- Include front awesome
+- Set up the base template
+- create django app and models for products
+- create serializer and views for the products
+- create simple front page (latest products)
+- view a product
+    - create viewset in django
+    - create vue page for showing product
+    - add link to detail page 
+
+- sette opp vuex / state 
+- make it posible to add to cart 
+    - add functionality to vuex
