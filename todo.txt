@@ -5,7 +5,7 @@
 - Done Include front awesome
 - Done Set up the base template
 - done create django app and models for products
-- create serializer and views for the products
+- done create serializer and views for the products
 - create simple front page (latest products)
 - view a product
     - create viewset in django
