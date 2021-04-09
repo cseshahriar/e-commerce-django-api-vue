@@ -1,9 +1,9 @@
 -Todo list
 
 - Done Install and setup django
-- Install and setup Vue
-- Include front awesome
-- Set up the base template
+- Done Install and setup Vue
+- Done Include front awesome
+- Done Set up the base template
 - create django app and models for products
 - create serializer and views for the products
 - create simple front page (latest products)
