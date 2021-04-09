@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
     
     # local apps
     'products.apps.ProductsConfig',
@@ -47,6 +48,8 @@ INSTALLED_APPS = [
     'corsheaders',
     'djoser',
 ]
+
+SITE_ID = 1
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:8000",

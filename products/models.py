@@ -1,5 +1,9 @@
-from django.db import models
+from io import BytesIO
+from PIL import Image
 
+from django.core.files import File
+from django.db import models
+from django.contrib.sites.models import Site
 
 class Category(models.Model):
     name = models.CharField(max_length=255)
@@ -15,3 +19,59 @@ class Category(models.Model):
 
     def get_absolute_url(self):
         return f'/{self.slug}/'
+
+
+class Product(models.Model):
+    category = models.ForeignKey(Category, related_name='products', 
+    on_delete=models.CASCADE)
+    name = models.CharField(max_length=255)
+    slug = models.SlugField()
+    description = models.TextField(null=True,  blank=True)
+    price = models.DecimalField(max_digits=6, decimal_places=2)
+    image = models.ImageField(upload_to='uploads/products/', null=True, blank=True)
+    thumbnail = models.ImageField(upload_to='uploads/products/thumbnail/', null=True,  blank=True)
+    date_added = models.DateTimeField(auto_now_add=True)
+    date_updated = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        ordering = ('-date_added',)
+        verbose_name = 'product'
+        verbose_name_plural = 'products'
+
+    def __str__(self):
+        return self.name
+
+    def get_site_domain(self):
+        return Site.objects.get_current().domain
+
+    def get_absolute_url(self):
+        return f'/{self.category.slug}/{self.slug}/'
+
+    def get_image(self):
+        if self.image:
+            return  self.get_site_domain + self.image.url
+        return ''
+
+    def get_thumbnail(self):
+        if self.thumbnail:
+            return self.thumbnail
+        else:
+            if self.image:
+                self.thumbnail = self.make_thumbnail(self.image)
+                self.save()
+
+                return self.get_site_domain + self.thumbnail.url
+            else:
+                return ''
+
+    def make_thumbnail(self, image, size=(300, 200)):
+        """ make 300x200 px thumbnail from given image"""
+        img = Image.open(image)
+        img.convert('RGB')
+        img.thumbnail(size)
+        
+        thumb_io = BytesIO()
+        img.save(thumb_io, 'JPEG', quality=85)
+
+        thumbnail = File(thumb_io, name=image.name)
+        return thumbnail
