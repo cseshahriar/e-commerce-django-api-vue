@@ -4,7 +4,7 @@
 - Done Install and setup Vue
 - Done Include front awesome
 - Done Set up the base template
-- create django app and models for products
+- done create django app and models for products
 - create serializer and views for the products
 - create simple front page (latest products)
 - view a product
