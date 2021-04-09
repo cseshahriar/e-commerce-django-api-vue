@@ -8,14 +8,16 @@
           <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28">
         </a>
 
-        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+        <a role="button" class="navbar-burger" aria-label="menu" 
+        aria-expanded="false" data-target="navbarBasicExample" @click="showMobileMenu = !showMobileMenu">
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
         </a>
+
       </div>
 
-      <div id="navbarBasicExample" class="navbar-menu">
+      <div id="navbarBasicExample" class="navbar-menu" v-bind:class="{'is-active': showMobileMenu}">
         <div class="navbar-start">
           <a class="navbar-item">Summer</a>
           <a class="navbar-item">Winter</a>
@@ -64,6 +66,17 @@
   </div>
 </template>
 
+<script>
+export default {
+  data() {
+    return {
+      showMobileMenu: false
+    }
+  }
+}
+</script>
+
 <style lang="scss">
 @import '../node_modules/bulma';
 </style>
+
