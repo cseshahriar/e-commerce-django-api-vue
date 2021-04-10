@@ -63,7 +63,7 @@ class Product(models.Model):
 
     def make_thumbnail(self, image, size=(300, 200)):
         """ make 300x200 px thumbnail from given image"""
-        img = Image.open(image)
+        img = Image.open(image, encoding='UTF-16')
         img.convert('RGB')
         img.thumbnail(size)
         
@@ -72,3 +72,4 @@ class Product(models.Model):
 
         thumbnail = File(thumb_io, name=image.name)
         return thumbnail
+
