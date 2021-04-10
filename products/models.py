@@ -47,7 +47,7 @@ class Product(models.Model):
     def get_image(self):
         if self.image:
             return self.image.url
-        return ''
+        return '' 
 
     def get_thumbnail(self):
         if self.thumbnail:

@@ -49,7 +49,7 @@ export default {
     this.getLastestProducts()
   },
   created() {
-    this.getLastestProducts()
+    // this.getLastestProducts()
   },
   methods: {
     getLastestProducts() {
