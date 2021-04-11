@@ -6,12 +6,15 @@
 - Done Set up the base template
 - done create django app and models for products
 - done create serializer and views for the products
-- create simple front page (latest products)
-- view a product
+- Done create simple front page (latest products)
+- Done view a product
     - create viewset in django
     - create vue page for showing product
     - add link to detail page 
 
-- sette opp vuex / state 
+- Done sette opp vuex / state 
 - make it posible to add to cart 
-    - add functionality to vuex
+    - Done add functionality to vuex
+    - Initialize store in app.vuex
+    - add button to product page
+    - show a toast message
