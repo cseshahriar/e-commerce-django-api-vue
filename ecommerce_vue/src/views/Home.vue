@@ -47,19 +47,21 @@ export default {
   },
   mounted() {
     this.getLastestProducts()
-  },
-  created() {
-    // this.getLastestProducts()
+    document.title = 'Home | Ecommerce Store'
   },
   methods: {
-    getLastestProducts() {
-      axios.get('/api/v1/products/latest')
+    async getLastestProducts() {
+      this.$store.commit('setIsLoading', true)
+
+      await  axios.get('/api/v1/products/latest')
       .then(response => {
         this.lastestProducts = response.data
       })
       .catch( error => {
         console.log(error)
       })
+      
+      this.$store.commit('setIsLoading', false)
     }
   }
 }
