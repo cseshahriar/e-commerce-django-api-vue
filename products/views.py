@@ -2,7 +2,7 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from django.http import Http404
 from .models import Product
-from .serializers import ProductSerializer
+from .serializers import ProductSerializer, CategorySerializer
 
 class LatestProductsList(APIView):
 
@@ -24,4 +24,18 @@ class ProductDetail(APIView):
     def get(self, request, category_slug, product_slug, fromat=None):
         product = self.get_object(category_slug, product_slug)
         serialize = ProductSerializer(product)
+        return Response(serialize.data)
+
+
+class CategoryDetailView(APIView):
+
+    def get_object(self, category_slug):
+        try:
+            return Category.objects.get(slug=category_slug)
+        except Category.DoesNotExist:
+            return Http404
+
+    def get(self, request, category_slug, fromat=None):
+        category = self.get_object(category_slug)
+        serialize = CategorySerializer(category)
         return Response(serialize.data)
