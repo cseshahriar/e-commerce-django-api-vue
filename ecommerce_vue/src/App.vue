@@ -4,7 +4,7 @@
     <!-- navbar -->
     <nav class="navbar" role="navigation" aria-label="main navigation">
       <div class="navbar-brand">
-        <a class="navbar-item" href="https://bulma.io">
+        <a class="navbar-item" href="/">
           <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28">
         </a>
 
@@ -19,8 +19,9 @@
 
       <div id="navbarBasicExample" class="navbar-menu" v-bind:class="{'is-active': showMobileMenu}">
         <div class="navbar-start">
-          <a class="navbar-item">Summer</a>
-          <a class="navbar-item">Winter</a>
+          
+          <a href="/summer" class="navbar-item">Summer</a>
+          <a  href="/winter" class="navbar-item">Winter</a>
         </div>
 
         <div class="navbar-end">
