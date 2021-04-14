@@ -47,7 +47,7 @@
           
           <div class="navbar-item">
             <div class="buttons">
-              <router-link to="/signup" class="button is-primary">
+              <router-link to="/sign-up" class="button is-primary">
                 <span class="icon">
                   <i class="fas fa-user-plus"></i>
                 </span>
@@ -65,7 +65,7 @@
                 </span>
               </router-link>
               
-              <router-link to="/logout" class="button is-danger">
+              <router-link to="/log-out" class="button is-danger">
                 <span class="icon">
                   <i class="fas fa-sign-out-alt"></i>
                 </span>
