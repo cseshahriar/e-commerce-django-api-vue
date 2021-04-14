@@ -22,9 +22,9 @@
 - Done set document title
 - Make it posible to view a category
     - Done convert the product to a component
-- Add search functionility
+- Done Add search functionility
 - View Cart 
-    - A cart item should be a component
+    - Done A cart item should be a component
 - Change contents of cart 
-    - Increment/Decrement qty
-    - remove from cart
+    - Done Increment/Decrement qty
+    - Done remove from cart
