@@ -15,6 +15,16 @@
 - Done sette opp vuex / state 
 - make it posible to add to cart 
     - Done add functionality to vuex
-    - Initialize store in app.vuex
-    - add button to product page
-    - show a toast message
+    - Done Initialize store in app.vuex
+    - Done add button to product page
+    - Done show a toast message
+- Done Implement a loading bar
+- Done set document title
+- Make it posible to view a category
+    - Done convert the product to a component
+- Add search functionility
+- View Cart 
+    - A cart item should be a component
+- Change contents of cart 
+    - Increment/Decrement qty
+    - remove from cart
