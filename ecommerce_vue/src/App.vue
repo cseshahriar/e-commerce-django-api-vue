@@ -18,35 +18,58 @@
       </div>
 
       <div id="navbarBasicExample" class="navbar-menu" v-bind:class="{'is-active': showMobileMenu}">
+        
         <div class="navbar-start">
           
-          <a href="/summer" class="navbar-item">Summer</a>
-          <a  href="/winter" class="navbar-item">Winter</a>
+          <!-- search -->
+          <form method="GET" action="/search">
+            <div class="field has-addons">
+              <div class="control">
+                <input class="input" type="text" placeholder="What are you looking for?" name="query" style="margin-top:8px">
+              </div>
+
+              <div class="control">
+                <button class="button is-success" style="margin-top:8px">
+                    <span class="icon">
+                      <i class="fas fa-search"></i>
+                    </span>
+                </button>
+              </div>
+            </div>
+          </form>
+          
         </div>
 
         <div class="navbar-end">
+
+          <a href="/summer" class="navbar-item">Summer</a>
+          <a  href="/winter" class="navbar-item">Winter</a>
+          
           <div class="navbar-item">
             <div class="buttons">
               <router-link to="/signup" class="button is-primary">
                 <span class="icon">
                   <i class="fas fa-user-plus"></i>
                 </span>
-                </router-link>
+              </router-link>
+
               <router-link to="/log-in" class="button is-info">
                 <span class="icon">
                   <i class="fas fa-sign-in-alt"></i>
                 </span>
               </router-link>
+              
               <router-link to="/cart" class="button is-success">
                 <span class="icon">
                   <i class="fas fa-shopping-cart"></i> ({{ cartTotalLength }})
                 </span>
               </router-link>
+              
               <router-link to="/logout" class="button is-danger">
                 <span class="icon">
                   <i class="fas fa-sign-out-alt"></i>
                 </span>
-                </router-link>
+              </router-link>
             </div>
           </div>
         </div>
