@@ -30,7 +30,7 @@
     - Done remove from cart
 -done Make it possible to sign up
 -done make it possible to log in
-- creae a simple my account page
+- done creae a simple my account page
 - show my orders on the my account page
     - an order should be a component
 - proceed to checkout(auth)
