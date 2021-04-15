@@ -8,7 +8,7 @@
                     <div class="field">
                         <label>Username</label>
                         <div class="control">
-                            <input type="text" class="input" v-model="username" placeholder="Username">
+                            <input type="text" class="input" v-model="username">
                         </div>
                     </div>
 
@@ -26,7 +26,7 @@
                         </div>
                     </div>
 
-                    <div class="notification is-danger" v-if="errors && errors.length">
+                    <div class="notification is-danger" v-if="errors.length">
                         <p v-for="error in errors" v-bind:key="error">{{ error }}</p>
                     </div>
 
@@ -51,12 +51,12 @@ import { toast } from 'bulma-toast'
 
 export default {
     name: 'SignUp',
-    date() {
+    data() {
         return {
             errors: [],
-            username: null,
-            password: null,
-            password2: null
+            username: '',
+            password: '',
+            password2: ''
         }
     },
     methods: {
@@ -67,16 +67,16 @@ export default {
             console.log(this.errors)
 
 
-            if(!this.username) {
+            if(this.username === '') {
                 this.errors.push('The username is missing')
             }
 
-            if(!this.password) {
+            if(this.password === '') {
                 this.errors.push('The password is missing')
             }
 
             if(this.password !== this.password2 ) {
-                this.errors.push('The password did not mathch')
+                this.errors.push('The password did\'t mathch')
             }
 
             if(!this.errors.length) {
@@ -107,6 +107,7 @@ export default {
                         console.log(JSON.stringify(error.response.data))
                     } else if (error.message) {
                         this.errors.push('Something went wrong. Please try again')
+                        
                         console.log(JSON.stringify(error))
                     }
                 })
