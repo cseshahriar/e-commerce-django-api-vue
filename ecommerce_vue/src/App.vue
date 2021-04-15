@@ -64,12 +64,7 @@
                   <i class="fas fa-shopping-cart"></i> ({{ cartTotalLength }})
                 </span>
               </router-link>
-              
-              <router-link to="/log-out" class="button is-danger">
-                <span class="icon">
-                  <i class="fas fa-sign-out-alt"></i>
-                </span>
-              </router-link>
+
             </div>
           </div>
         </div>

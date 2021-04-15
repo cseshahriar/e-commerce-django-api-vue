@@ -38,3 +38,4 @@
 - deploy django
     - create a server and access
 
+1.47.59"
