@@ -28,8 +28,8 @@
 - Change contents of cart 
     - Done Increment/Decrement qty
     - Done remove from cart
-- Make it possible to sign up
-- make it possible to log in
+-done Make it possible to sign up
+-done make it possible to log in
 - creae a simple my account page
 - show my orders on the my account page
     - an order should be a component
