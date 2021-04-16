@@ -34,8 +34,8 @@
 - show my orders on the my account page
     - an order should be a component
 - proceed to checkout(auth)
-- create  a simple success page 
+- Done create  a simple success page 
 - deploy django
     - create a server and access
 
-1.59.00"
+"

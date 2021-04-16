@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     
     # local apps
     'products.apps.ProductsConfig',
+    'orders.apps.OrdersConfig',
 
     # plugins
     'rest_framework',
