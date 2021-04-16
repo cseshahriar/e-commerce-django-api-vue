@@ -38,4 +38,4 @@
 - deploy django
     - create a server and access
 
-"
+2.12"

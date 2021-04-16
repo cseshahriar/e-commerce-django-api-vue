@@ -147,5 +147,5 @@ MEDIA_ROOT = BASE_DIR / 'media/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Stripe
-STRIPE_PUBLIC_KEY = 'pk_test_2Kf7j9g3pFaZg0uo1VA6HMdi'
+STRIPE_PUBLISHABLE_KEY = 'pk_test_2Kf7j9g3pFaZg0uo1VA6HMdi'
 STRIPE_SECRET_KEY = 'sk_test_8afhc3XAJu8jIizixo2Selae'

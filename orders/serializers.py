@@ -11,7 +11,7 @@ class OrderItemSerializer(serializers.ModelSerializer):
         fields = (
             'price',
             'product',
-            'quantity'
+            'quantity',
         )
 
 
@@ -31,19 +31,17 @@ class OrderSerializer(serializers.ModelSerializer):
             'place',
             'phone',
             'stripe_token',
-            'items'
+            'items',
         )
 
     def create(self, validated_data):
         """ override create method """
-
         items_data = validated_data.pop('items') # remove items from validated_data
-
         # order create 
         order = Order.objects.create(**validated_data)
 
         # order_item save 
         for item_data in items_data:
-            OrderItem.objects.create(order=order, **items_data)
+            OrderItem.objects.create(order=order, **item_data)
         
         return order

@@ -20,6 +20,7 @@ def checkout(request):
     serializer = OrderSerializer(data=request.data)
 
     if serializer.is_valid():
+        print('serialize validated -------------')
         stripe.api_key = settings.STRIPE_SECRET_KEY
         paid_amount = sum(
             item.get('quantity') * item.get('product').price 
@@ -36,10 +37,11 @@ def checkout(request):
             )
 
             serializer.save(user=request.user, paid_amount=paid_amount)
-
+            print('try suceess --------------------')
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         except Exception:
+            print('try fail -----------------')
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-            
+    
     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
